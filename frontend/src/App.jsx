@@ -1,4 +1,4 @@
-// 페이지 사이의 이동 (Navigation)을 여기서 정의!!
+// 페이지 사이의 이동 (Navigate)을 여기서 정의!!
 
 import react from "react"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
