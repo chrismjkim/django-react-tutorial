@@ -3,7 +3,7 @@ import api from "../api";
 import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 
-import "..styles/Form.css"
+import "../styles/Form.css"
 
 function Form({route, method}) {
     // route: 폼 제출 시 이동하고 싶은 경로
@@ -28,7 +28,7 @@ function Form({route, method}) {
                 localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
                 navigate("/")
             } else {
-                // 회원가입하는 경우 토큰 세팅
+                // 회원가입하는 경우 리디렉션
                 navigate("/login")
             }
         }
