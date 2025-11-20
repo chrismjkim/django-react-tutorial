@@ -1,5 +1,8 @@
 import {useState, useEffect} from "react"
 import api from "../api"
+import Note from "../components/Note"
+
+import "../styles/Form.css"
 
 function Home() {
     const [notes, setNotes] = useState([]);
@@ -17,8 +20,8 @@ function Home() {
         .catch((err) => alert(err));
     }
     
-    const deleteNote = () => {
-        api.delete(`/api/notes/delete/${id}/`)
+    const deleteNote = (id) => {
+        api.delete(`/api/notes/delete/${id}`)
         .then((res) => {
             if (res.status === 204) alert("Note deleted!");
             else alert("Failed to delete note.");
@@ -43,6 +46,7 @@ function Home() {
     return <div>
         <div>
             <h2>Notes</h2>
+            {notes.map((note) => <Note note={note} onDelete={deleteNote} key={note.id} />)}
         </div>
         <h2>Create a Note</h2>
         <form onSubmit={createNote}>
