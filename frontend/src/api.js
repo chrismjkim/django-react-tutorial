@@ -4,7 +4,7 @@
 // axios 사용 -> axios interceptor 작성
 
 import axios from "axios"
-import { ACCESS_TOKEN  } from "./constatnts"
+import { ACCESS_TOKEN } from "./constants"
 
 const api = axios.create({
     // environment variable(환경변수) 안에 지정된 것을 아무거나 import 가능
